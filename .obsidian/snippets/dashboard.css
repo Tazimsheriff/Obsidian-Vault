@@ -1,0 +1,235 @@
+/* =========================================================
+   DASHBOARD PREMIUM CSS SNIPPET FOR OBSIDIAN
+   File: .obsidian/snippets/dashboard.css
+   ========================================================= */
+
+/* ── ROOT TOKENS ─────────────────────────────────────────── */
+:root {
+  --db-bg: #0d1117;
+  --db-surface: #161b22;
+  --db-surface2: #21262d;
+  --db-border: #30363d;
+  --db-accent: #7c3aed;
+  --db-accent-glow: rgba(124, 58, 237, 0.35);
+  --db-accent2: #06b6d4;
+  --db-accent2-glow: rgba(6, 182, 212, 0.25);
+  --db-gold: #f59e0b;
+  --db-red: #ef4444;
+  --db-green: #22c55e;
+  --db-text: #e6edf3;
+  --db-muted: #8b949e;
+  --db-radius: 12px;
+  --db-font: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ── BODY & BACKGROUND ───────────────────────────────────── */
+body {
+  background-color: var(--db-bg) !important;
+  color: var(--db-text) !important;
+  font-family: var(--db-font) !important;
+}
+
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  background: var(--db-bg);
+}
+
+/* ── HEADINGS ────────────────────────────────────────────── */
+h1 {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #c084fc, #818cf8, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem !important;
+}
+
+h2 {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--db-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--db-border);
+  padding-bottom: 6px;
+  margin-top: 2rem !important;
+}
+
+h3 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--db-accent2) !important;
+}
+
+/* ── CALLOUT BASE ────────────────────────────────────────── */
+.callout {
+  border-radius: var(--db-radius) !important;
+  border: 1px solid var(--db-border) !important;
+  background: var(--db-surface) !important;
+  padding: 1rem 1.2rem !important;
+  margin: 0.75rem 0 !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.callout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.callout-title {
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ── CALLOUT VARIANTS ────────────────────────────────────── */
+
+/* QUOTE – gold accent */
+.callout[data-callout="quote"] {
+  border-left: 3px solid var(--db-gold) !important;
+  background: linear-gradient(135deg, rgba(245,158,11,0.08), var(--db-surface)) !important;
+}
+.callout[data-callout="quote"] .callout-title {
+  color: var(--db-gold) !important;
+}
+
+/* TASK / TODO – indigo */
+.callout[data-callout="todo"],
+.callout[data-callout="task"] {
+  border-left: 3px solid var(--db-accent) !important;
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), var(--db-surface)) !important;
+  box-shadow: 0 0 0 1px rgba(124,58,237,0.15);
+}
+.callout[data-callout="todo"] .callout-title,
+.callout[data-callout="task"] .callout-title {
+  color: var(--db-accent) !important;
+}
+
+/* TIMER / URGENT – red */
+.callout[data-callout="timer"],
+.callout[data-callout="danger"] {
+  border-left: 3px solid var(--db-red) !important;
+  background: linear-gradient(135deg, rgba(239,68,68,0.1), var(--db-surface)) !important;
+  animation: pulse-red 3s ease-in-out infinite;
+}
+.callout[data-callout="timer"] .callout-title,
+.callout[data-callout="danger"] .callout-title {
+  color: var(--db-red) !important;
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  50%       { box-shadow: 0 0 12px 2px rgba(239,68,68,0.25); }
+}
+
+/* DAILY – cyan */
+.callout[data-callout="daily"] {
+  border-left: 3px solid var(--db-accent2) !important;
+  background: linear-gradient(135deg, rgba(6,182,212,0.08), var(--db-surface)) !important;
+}
+.callout[data-callout="daily"] .callout-title {
+  color: var(--db-accent2) !important;
+}
+
+/* SUCCESS / DONE – green */
+.callout[data-callout="success"],
+.callout[data-callout="check"] {
+  border-left: 3px solid var(--db-green) !important;
+  background: linear-gradient(135deg, rgba(34,197,94,0.07), var(--db-surface)) !important;
+}
+.callout[data-callout="success"] .callout-title,
+.callout[data-callout="check"] .callout-title {
+  color: var(--db-green) !important;
+}
+
+/* INFO – indigo glow */
+.callout[data-callout="info"] {
+  border-left: 3px solid #818cf8 !important;
+  background: linear-gradient(135deg, rgba(129,140,248,0.08), var(--db-surface)) !important;
+}
+.callout[data-callout="info"] .callout-title {
+  color: #818cf8 !important;
+}
+
+/* ── CHECKBOXES ──────────────────────────────────────────── */
+input[type="checkbox"] {
+  accent-color: var(--db-accent);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.markdown-rendered li.task-list-item.is-checked > span {
+  color: var(--db-muted) !important;
+  text-decoration: line-through;
+}
+
+/* ── HORIZONTAL RULE ─────────────────────────────────────── */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--db-border) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ── LINKS ───────────────────────────────────────────────── */
+a.internal-link, a.external-link {
+  color: var(--db-accent2) !important;
+  text-decoration: none !important;
+  border-bottom: 1px dashed rgba(6,182,212,0.4);
+  transition: color 0.15s, border-color 0.15s;
+}
+a.internal-link:hover, a.external-link:hover {
+  color: #fff !important;
+  border-color: var(--db-accent2);
+}
+
+/* ── TAGS ────────────────────────────────────────────────── */
+.tag {
+  background: rgba(124,58,237,0.15) !important;
+  color: #c084fc !important;
+  border: 1px solid rgba(124,58,237,0.3) !important;
+  border-radius: 999px !important;
+  padding: 1px 10px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+/* ── INLINE CODE & CODE BLOCKS ───────────────────────────── */
+code {
+  background: var(--db-surface2) !important;
+  color: #c084fc !important;
+  border-radius: 5px !important;
+  padding: 1px 6px !important;
+  font-size: 0.85em !important;
+}
+
+pre {
+  background: var(--db-surface2) !important;
+  border: 1px solid var(--db-border) !important;
+  border-radius: var(--db-radius) !important;
+}
+
+/* ── BOLD / EMPHASIS ─────────────────────────────────────── */
+strong {
+  color: #e2e8f0 !important;
+  font-weight: 700 !important;
+}
+em {
+  color: var(--db-gold) !important;
+  font-style: italic !important;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: var(--db-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--db-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--db-accent); }

@@ -1,0 +1,16 @@
+{
+  "cssTheme": "Minimal",
+  "cssSnippets": ["dashboard"],
+  "enabledPlugins": [],
+  "theme": "",
+  "baseFontSize": 16,
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "showLineNumber": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showFrontmatter": false
+}
