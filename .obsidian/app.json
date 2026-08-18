@@ -1,0 +1,12 @@
+{
+  "cssSnippets": [
+    "dashboard"
+  ],
+  "enabledPlugins": [],
+  "showLineNumber": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showFrontmatter": false
+}

@@ -1,0 +1,253 @@
+/* ══════════════════════════════════════
+   Quick Tasks Plugin — styles.css
+   ══════════════════════════════════════ */
+
+/* ── Modal shell ── */
+.qt-modal {
+  width: 520px;
+  max-width: 96vw;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.qt-modal .modal-content { padding: 0; }
+
+/* ── Header ── */
+.qt-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px 14px;
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  color: #fff;
+}
+.qt-header-icon { font-size: 26px; line-height: 1; }
+.qt-header-text h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+.qt-header-text p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.8;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── Session count badge ── */
+.qt-badge {
+  margin-left: auto;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ── Form area ── */
+.qt-form {
+  padding: 18px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Task title input */
+.qt-title-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.qt-title-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1.5px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  transition: border-color 0.15s;
+  outline: none;
+}
+.qt-title-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+}
+.qt-title-input::placeholder { color: var(--text-faint); }
+
+.qt-add-btn {
+  padding: 0 16px;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qt-add-btn:hover  { background: #6d28d9; transform: scale(1.05); }
+.qt-add-btn:active { transform: scale(0.97); }
+
+/* Options row */
+.qt-options-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.qt-select, .qt-date-input {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.qt-select:focus, .qt-date-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+}
+
+.qt-date-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.qt-date-wrap.hidden { display: none; }
+
+/* ── Session list ── */
+.qt-session-wrap {
+  padding: 12px 24px;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.qt-session-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.qt-empty-state {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+  text-align: center;
+  padding: 18px 0;
+}
+.qt-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.qt-task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  animation: qt-slide-in 0.2s ease;
+}
+@keyframes qt-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.qt-task-priority {
+  font-size: 14px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+.qt-task-title {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-normal);
+}
+.qt-task-due {
+  font-size: 11px;
+  color: #ef4444;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.qt-task-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-faint);
+  font-size: 14px;
+  padding: 0 2px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  line-height: 1;
+}
+.qt-task-remove:hover { color: #ef4444; }
+
+/* ── Action buttons ── */
+.qt-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 24px 18px;
+  justify-content: flex-end;
+  border-top: 1px solid var(--background-modifier-border);
+}
+.qt-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.qt-btn:hover  { opacity: 0.9; transform: translateY(-1px); }
+.qt-btn:active { transform: translateY(0); }
+.qt-btn-save {
+  background: #7c3aed;
+  color: #fff;
+}
+.qt-btn-save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+.qt-btn-cancel {
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* ── Save confirmation ── */
+.qt-saved-banner {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  background: rgba(124,58,237,0.12);
+  border-top: 1px solid rgba(124,58,237,0.25);
+  font-size: 13px;
+  color: #a78bfa;
+  font-weight: 600;
+}
+.qt-saved-banner.visible { display: flex; }

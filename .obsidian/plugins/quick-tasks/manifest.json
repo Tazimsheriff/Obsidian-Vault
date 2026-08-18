@@ -1,0 +1,10 @@
+{
+  "id": "quick-tasks",
+  "name": "Quick Tasks",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Rapidly add tasks to your Task Tracker with a simple form — no markdown required. Perfect for mobile.",
+  "author": "Vault",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

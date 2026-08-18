@@ -14,6 +14,7 @@
 | [[02 - Tasks/Task Tracker\|02 - Tasks]] | Task tracker, projects, deadlines |
 | [[03 - Quotes & Thoughts/Quotes Library\|03 - Quotes & Thoughts]] | Curated quotes, insights, philosophy |
 | `04 - Notes` | General notes, research, ideas |
+| `04 - Notes/Voice Notes` | 🎤 Voice-transcribed notes (auto-generated) |
 
 ---
 

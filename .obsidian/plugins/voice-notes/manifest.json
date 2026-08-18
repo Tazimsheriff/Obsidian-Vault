@@ -1,0 +1,10 @@
+{
+  "id": "voice-notes",
+  "name": "Voice Notes",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Record your voice and save transcriptions as notes using the Web Speech API.",
+  "author": "Vault",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

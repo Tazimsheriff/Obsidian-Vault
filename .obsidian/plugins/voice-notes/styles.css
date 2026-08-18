@@ -1,0 +1,291 @@
+/* Voice Notes Plugin — Modal Styles */
+
+/* ── Ribbon button pulse while recording ── */
+.voice-notes-recording .side-dock-ribbon-action[aria-label="Voice Notes"] {
+  animation: voice-notes-pulse 1.4s ease-in-out infinite;
+  color: var(--color-red);
+}
+
+@keyframes voice-notes-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.15); }
+}
+
+/* ── Modal container ── */
+.voice-notes-modal {
+  width: 540px;
+  max-width: 95vw;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.voice-notes-modal .modal-content {
+  padding: 0;
+}
+
+/* ── Header ── */
+.vn-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px 16px;
+  background: linear-gradient(135deg, #6c3fc5 0%, #9b59b6 100%);
+  color: #fff;
+}
+
+.vn-header-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.vn-header-text h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.vn-header-text p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.8;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── Status bar ── */
+.vn-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.vn-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.vn-status-dot.recording {
+  background: #e74c3c;
+  animation: voice-notes-pulse 1.2s ease-in-out infinite;
+}
+
+.vn-status-dot.paused {
+  background: #f39c12;
+}
+
+.vn-status-dot.saved {
+  background: #27ae60;
+}
+
+.vn-status-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.vn-timer {
+  margin-left: auto;
+  font-size: 13px;
+  font-family: var(--font-monospace);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Waveform ── */
+.vn-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 48px;
+  padding: 0 24px;
+  background: var(--background-primary);
+}
+
+.vn-bar {
+  width: 4px;
+  border-radius: 4px;
+  background: var(--interactive-accent);
+  transition: height 0.15s ease;
+  opacity: 0.3;
+}
+
+.vn-waveform.active .vn-bar {
+  opacity: 1;
+}
+
+.vn-waveform.active .vn-bar:nth-child(1)  { animation: vn-wave 1.0s ease-in-out infinite; }
+.vn-waveform.active .vn-bar:nth-child(2)  { animation: vn-wave 1.0s ease-in-out infinite 0.08s; }
+.vn-waveform.active .vn-bar:nth-child(3)  { animation: vn-wave 1.0s ease-in-out infinite 0.16s; }
+.vn-waveform.active .vn-bar:nth-child(4)  { animation: vn-wave 1.0s ease-in-out infinite 0.24s; }
+.vn-waveform.active .vn-bar:nth-child(5)  { animation: vn-wave 1.0s ease-in-out infinite 0.32s; }
+.vn-waveform.active .vn-bar:nth-child(6)  { animation: vn-wave 1.0s ease-in-out infinite 0.40s; }
+.vn-waveform.active .vn-bar:nth-child(7)  { animation: vn-wave 1.0s ease-in-out infinite 0.48s; }
+.vn-waveform.active .vn-bar:nth-child(8)  { animation: vn-wave 1.0s ease-in-out infinite 0.56s; }
+.vn-waveform.active .vn-bar:nth-child(9)  { animation: vn-wave 1.0s ease-in-out infinite 0.64s; }
+.vn-waveform.active .vn-bar:nth-child(10) { animation: vn-wave 1.0s ease-in-out infinite 0.72s; }
+.vn-waveform.active .vn-bar:nth-child(11) { animation: vn-wave 1.0s ease-in-out infinite 0.80s; }
+.vn-waveform.active .vn-bar:nth-child(12) { animation: vn-wave 1.0s ease-in-out infinite 0.88s; }
+
+@keyframes vn-wave {
+  0%, 100% { height: 6px; }
+  50%       { height: 28px; }
+}
+
+/* ── Transcript area ── */
+.vn-transcript-wrap {
+  padding: 16px 24px;
+}
+
+.vn-transcript-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.vn-transcript {
+  min-height: 120px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 12px 14px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-normal);
+  white-space: pre-wrap;
+  word-break: break-word;
+  scrollbar-width: thin;
+}
+
+.vn-transcript-interim {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.vn-transcript-placeholder {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ── Settings row ── */
+.vn-settings-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 24px 12px;
+  flex-wrap: wrap;
+}
+
+.vn-setting-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.vn-setting-item select,
+.vn-setting-item input[type="text"] {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 12px;
+  color: var(--text-normal);
+  cursor: pointer;
+}
+
+/* ── Action buttons ── */
+.vn-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 24px 20px;
+  justify-content: flex-end;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.vn-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.vn-btn:hover  { opacity: 0.9; transform: translateY(-1px); }
+.vn-btn:active { transform: translateY(0); }
+
+.vn-btn-record {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.vn-btn-record.is-recording {
+  background: #c0392b;
+}
+
+.vn-btn-save {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.vn-btn-save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vn-btn-cancel {
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* ── Saved confirmation ── */
+.vn-saved-banner {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(39, 174, 96, 0.12);
+  border-top: 1px solid rgba(39, 174, 96, 0.3);
+  font-size: 13px;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.vn-saved-banner.visible {
+  display: flex;
+}
+
+/* ── Settings page ── */
+.vn-settings-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-bottom: 20px;
+}
+
+.vn-settings-header .vn-icon {
+  font-size: 24px;
+}
