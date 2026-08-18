@@ -4,5 +4,8 @@
   "baseFontSize": 16,
   "interfaceFontFamily": "",
   "textFontFamily": "",
-  "monospaceFontFamily": ""
+  "monospaceFontFamily": "",
+  "enabledCssSnippets": [
+    "dashboard"
+  ]
 }
