@@ -32,6 +32,7 @@
 ## 📋 Today's Quick List
 
 > [!todo] Today
+> - [ ] Compleete the Wheelz tracker agent 
 > - [ ] 
 > - [ ] 
 > - [ ] 
