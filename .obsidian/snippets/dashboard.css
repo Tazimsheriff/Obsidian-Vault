@@ -87,17 +87,54 @@ h3 {
 
 /* ── CALLOUT VARIANTS ────────────────────────────────────── */
 
-/* QUOTE – gold accent */
 .callout[data-callout="quote"] {
+  border-left: 3px solid var(--db-accent2) !important;
+  background: linear-gradient(135deg, rgba(6,182,212,0.08), var(--db-surface)) !important;
+}
+.callout[data-callout="quote"] .callout-title {
+  color: var(--db-accent2) !important;
+}
+
+/* HABIT / READING – green accent */
+.callout[data-callout="habit"], .callout[data-callout="reading"] {
+  border-left: 3px solid var(--db-green) !important;
+  background: linear-gradient(135deg, rgba(34,197,94,0.08), var(--db-surface)) !important;
+  box-shadow: 0 0 0 1px rgba(34,197,94,0.15);
+}
+.callout[data-callout="habit"] .callout-title,
+.callout[data-callout="reading"] .callout-title {
+  color: var(--db-green) !important;
+}
+
+/* WORKOUT / FITNESS – purple accent */
+.callout[data-callout="workout"], .callout[data-callout="fitness"] {
+  border-left: 3px solid var(--db-accent) !important;
+  background: linear-gradient(135deg, rgba(124,58,237,0.08), var(--db-surface)) !important;
+  box-shadow: 0 0 0 1px rgba(124,58,237,0.15);
+}
+.callout[data-callout="workout"] .callout-title,
+.callout[data-callout="fitness"] .callout-title {
+  color: var(--db-accent) !important;
+}
+
+/* POEM – gold accent */
+.callout[data-callout="poem"] {
   border-left: 3px solid var(--db-gold) !important;
   background: linear-gradient(135deg, rgba(245,158,11,0.08), var(--db-surface)) !important;
 }
-.callout[data-callout="quote"] .callout-title {
+.callout[data-callout="poem"] .callout-title {
   color: var(--db-gold) !important;
 }
 
-/* TASK / TODO – indigo */
-.callout[data-callout="todo"],
+/* SUCCESS / DONE – green */
+.callout[data-callout="success"], .callout[data-callout="check"] {
+  border-left: 3px solid var(--db-green) !important;
+  background: linear-gradient(135deg, rgba(34,197,94,0.07), var(--db-surface)) !important;
+}
+.callout[data-callout="success"] .callout-title,
+.callout[data-callout="check"] .callout-title {
+  color: var(--db-green) !important;
+}
 .callout[data-callout="task"] {
   border-left: 3px solid var(--db-accent) !important;
   background: linear-gradient(135deg, rgba(124,58,237,0.1), var(--db-surface)) !important;
