@@ -8,4 +8,5 @@ Things i need to fix !
 3.Studies
 4.Skillset
 5.Hobbies
-6.
+6.Food
+7.
